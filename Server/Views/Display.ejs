@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="yellow">
+   
+                <a href="/students/home">Home Dashboard</a> |
+                <a href="/students/insert">Insert User</a> |
+                <a href="/students/display">Display User</a>| 
+                <a href="/students/task">Display Task</a> 
+
+            
+    <h1>Display Page</h1>
+    <hr size="5"  color="blue">
+
+    <table bg="red" border="1" width="700px" align="center">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>City</th>
+            <th>Assign Task</th>
+        </tr>
+            <%
+            mydata.forEach(key=>{
+                %>
+        <tr>
+                <td><%= key.name %></td>
+                <td><%= key.email %></td>
+                <td><%= key.number %></td>
+                <td><%= key.city %></td>
+                <td> 
+                    <a href="/students/assignTask?id=<%= key._id %>">Assign Task</a>
+                    </td>
+                </tr>
+         <%
+            })
+            %>
+    </table>
+
+
+</body>
+</html>

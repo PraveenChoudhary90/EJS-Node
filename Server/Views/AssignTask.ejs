@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Assign Task</title></head>
+<body bgcolor="lightblue">
+  <a href="/students/home">Home Dashboard</a> |
+  <a href="/students/insert">Insert User</a> |
+  <a href="/students/display">Display User</a>
+
+  <h1>Assign Task to <%= student.name %></h1><hr size="5" color="blue">
+  <form action="/students/assignTask" method="post">
+    <input type="hidden" name="id" value="<%= student._id %>">
+    <label>Task: <input type="text" name="task" required></label><br>
+    <button type="submit">Assign Task</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Dashboard</title>
+</head>
+<body bgcolor="lightgray">
+  <a href="/students/home">Home Dashboard</a> |
+  <a href="/students/insert">Insert User</a> |
+  <a href="/students/display">Display User</a>|
+  <a href="/students/task">Display Task</a> 
+
+
+  <h2> Assigned Tasks</h2>
+  
+    <table border="1" width="700" align="center" bgcolor="#f2f2f2">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Number</th>
+        <th>City</th>
+        <th>Assigned Task</th>
+      </tr>
+
+      <%
+       TaskDisplay.forEach(task => {
+        %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.email %></td>
+        <td><%= task.number %></td>
+        <td><%= task.city %></td>
+        <td><%= task.assignedTask %></td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <p>
+        📥 <a href="/students/export-tasks">Download Assigned Tasks (Excel)</a>
+      </p>
+</body>
+</html>
