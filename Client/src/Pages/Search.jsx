@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 function Search() {
   const [mydata, setMyData] = useState([]);
   const [search, setSearch] = useState('');
+  const [hcolor, sethColor] = useState("");
 
   useEffect(() => {
     axios.get('https://mocki.io/v1/10512a17-105f-435d-a920-dce1478345bd').then((res) => {
@@ -19,12 +20,16 @@ function Search() {
   };
  
 
-  // Adjust field to search by productName (or change as needed)
-  const filteredData = mydata.filter((item) =>
-    item.productName.toLowerCase().includes(search.toLowerCase())||
-    item.brandName.toLowerCase().includes(search.toLowerCase())
-    
-  );
+  const filteredData = mydata.filter((item) => {
+    const matchesSearch =
+      item.productName.toLowerCase().includes(search.toLowerCase()) ||
+      item.brandName.toLowerCase().includes(search.toLowerCase()) ||
+      item.color.toLowerCase().includes(search.toLowerCase());
+
+    const matchesColor = hcolor ? item.color.toLowerCase() === hcolor.toLowerCase() : true;
+
+    return matchesSearch && matchesColor;
+  });
   return (
     <>
       <h1 align="center">Welcome to Home page</h1>
@@ -37,6 +42,18 @@ function Search() {
           value={search}
           onChange={handleInput}
        />
+        <select
+  value={hcolor}
+  onChange={e => sethColor(e.target.value)}
+  className="mb-3"
+>
+  <option value="">Filter by Color</option>
+  <option value="red">Red</option>
+  <option value="black">Black</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+</select>
+
       </form>
 
       <Table striped bordered hover>
