@@ -13,6 +13,10 @@ function Home() {
    },[])
 
 
+   
+
+   
+
 
     const ans =mydata.map(key=>{
         return(
@@ -32,6 +36,8 @@ function Home() {
   return (
     <>
     <h1 algin="center">Welcome to Home page</h1>
+
+
     <Table striped bordered hover>
       <thead>
         <tr>
@@ -47,6 +53,7 @@ function Home() {
        {ans}
        </tbody>
        </Table>
+       
     </>
   )
 }
