@@ -5,6 +5,8 @@ import Layout from './Layout'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Search from './Pages/Search'
+import Sorting from './Pages/Sorting'
+import Pagination from './Pages/Pagination'
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
       <Route path='home' element={<Home/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='search' element={<Search/>}/>
+      <Route path='sorting' element={<Sorting/>}/>
+      <Route path='pagination' element={<Pagination/>}/>
 
       </Route>
     </Routes>

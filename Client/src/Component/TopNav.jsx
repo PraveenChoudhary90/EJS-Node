@@ -15,6 +15,8 @@ function TopNav() {
             <Nav.Link as={Link} to="home">Home</Nav.Link>
             <Nav.Link as={Link}  to="about">About</Nav.Link>
             <Nav.Link as={Link}  to="search">Search</Nav.Link>
+            <Nav.Link as={Link}  to="sorting">Sorting</Nav.Link>
+            <Nav.Link as={Link}  to="pagination">Pagination</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
