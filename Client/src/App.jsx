@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Search from './Pages/Search'
 import Sorting from './Pages/Sorting'
 import Pagination from './Pages/Pagination'
+import Pagination1 from './Pages/Pagination1'
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
       <Route path='search' element={<Search/>}/>
       <Route path='sorting' element={<Sorting/>}/>
       <Route path='pagination' element={<Pagination/>}/>
-
+      <Route path='pagination1' element={<Pagination1/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
